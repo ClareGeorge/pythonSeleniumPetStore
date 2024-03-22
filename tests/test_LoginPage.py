@@ -29,7 +29,17 @@ class TestLoginPage(BaseClass):
             if result  == "success":
                 category_page = CatalogPage(self.driver).selectCategory(getTestData["category"])
                 product_page = category_page.selectProduct(getTestData["product"])
-                product_page.selectProduct(getTestData["item"])
+                item_page = product_page.selectItem(getTestData["item"])
+                shoppingcart_page = item_page.addToCart()
+                orderform_page = shoppingcart_page.proceedToCheckout()
+                confirmorder_page = orderform_page.continueOrder()
+                orderconfirmation_page = confirmorder_page.confirmOrder()
+                myaccount_page , order_no_str = orderconfirmation_page.verifyOrderDetails()
+                myorders_page = myaccount_page.navigateToMyOrders()
+                signout = myorders_page.verifyOrder(order_no_str )
+                log.info( "Order " + order_no_str + " has been placed")
+                signout.signOff()
+                log.info("customer " + getTestData["user_name"] + " has been signed out" )
 
 
 

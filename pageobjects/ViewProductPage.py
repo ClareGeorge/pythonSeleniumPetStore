@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+from pageobjects.ViewItemPage import ViewItemPage
+
 
 class ViewProductPage:
     item_name = None
@@ -10,11 +12,11 @@ class ViewProductPage:
     addtocart_links = (By.XPATH, "//tr/td[5]/a[text()='Add to Cart']")
     backtocategory_link = (By.XPATH, "//div[@id='BackLink']/a")
 
-    signoff_link = (By.PARTIAL_LINK_TEXT, "Sign Out")
+
 
     def __init__(self, driver):
         self.driver = driver
-    def selectProduct(self, item_name):
+    def selectItem(self, item_name):
 
         all_item_descriptions = self.driver.find_elements(*ViewProductPage.item_descriptions_text)
         all_itemid_links = self.driver.find_elements(*ViewProductPage.itemid_links)
@@ -26,8 +28,7 @@ class ViewProductPage:
                 item_link = all_itemid_links[item_index]
                 item_link.click()
                 break
+        return ViewItemPage(self.driver)
 
 
-
-        self.driver.find_element(*ViewProductPage.signoff_link).click()
 
