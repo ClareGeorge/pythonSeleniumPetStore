@@ -43,3 +43,12 @@
 2024-03-22 20:47:13,713 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
 2024-03-22 20:50:30,295 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
 2024-03-22 20:50:36,593 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:06:21,977 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:07:18,701 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:09:25,652 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:10:07,743 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:10:14,021 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:39:44,728 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:43:42,249 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:44:32,505 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/
+2024-03-22 22:44:38,846 :INFO : TestCase: test_CreateUser :Navigated to page https://petstore.octoperf.com/

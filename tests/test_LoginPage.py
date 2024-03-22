@@ -28,7 +28,8 @@ class TestLoginPage(BaseClass):
         else:
             if result  == "success":
                 category_page = CatalogPage(self.driver).selectCategory(getTestData["category"])
-                category_page.selectProduct(getTestData["product"])
+                product_page = category_page.selectProduct(getTestData["product"])
+                product_page.selectProduct(getTestData["item"])
 
 
 
