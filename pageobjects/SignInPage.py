@@ -4,7 +4,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.remote.webelement import WebElement
 
 
-from pageobjects.SearchProductsPage import SearchProductsPage
+
+
+from pageobjects.CatalogPage import CatalogPage
+from pageobjects.RegistrationPage import RegistrationPage
 
 
 class SignInPage:
@@ -33,10 +36,10 @@ class SignInPage:
         if  isinstance(wait, WebElement) :
             if "Welcome" in wait.text:
                 print("Login is success")
-                return Ca
+                return "success"
             elif "Signon failed" in wait.text:
                 print("login failed")
                 self.driver.find_element(*SignInPage.registernow_link).click()
-                return "fail"
+                return ["fail", RegistrationPage(self.driver)]
 
 

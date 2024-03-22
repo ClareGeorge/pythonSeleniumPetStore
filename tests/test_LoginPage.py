@@ -22,12 +22,17 @@ class TestLoginPage(BaseClass):
         log.info("Navigated to page " + getTestData["petstore_url"] )
 
         result = signin_page.signinUsing(getTestData["user_name"],getTestData["password"])
-        if result == "success":
-            searchproduct_page =CatalogPage(self.driver)
-        elif result == "fail":
-            register_page = RegistrationPage(self.driver)
-            signin_page = register_page.registerUserWith(getTestData)
-            signin_page.signinUsing(getTestData["user_name"],getTestData["password"])
+        while result == "fail":
+            signin_page = RegistrationPage(self.driver).registerUserWith(getTestData)
+            result = signin_page.signinUsing(getTestData["user_name"], getTestData["password"])
+        else:
+            if result  == "success":
+                category_page = CatalogPage(self.driver).selectCategory(getTestData["category"])
+                category_page.selectProduct(getTestData["product"])
+
+
+
+
 
         log.removeHandler(log.handlers[0])
 

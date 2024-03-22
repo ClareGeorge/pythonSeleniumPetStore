@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
-from pageobjects.SignInPage import SignInPage
+from pageobjects import SignInPage
 
 
 class RegistrationPage:
@@ -55,7 +55,7 @@ class RegistrationPage:
 
         self.driver.find_element(*RegistrationPage.submit_button).click()
         self.driver.find_element(*RegistrationPage.signin_url).click()
-        return SignInPage(self.driver)
+        return SignInPage.SignInPage(self.driver)
 
 
 
